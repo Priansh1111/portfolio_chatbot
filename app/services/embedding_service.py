@@ -34,11 +34,12 @@ def embed_query(text):
     """Use this when embedding a user's QUESTION at retrieval time."""
     return _embed(f"search_query: {text}")
 
-# for chunk in chunks:
-#     vector = embed_document(chunk["content"])
-#     print(chunk["entry_name"], "->", len(vector))
+
 
 if __name__ == "__main__":
-    vec = embed_document("AI/ML Intern at SynergyConnect Data Innovations")
-    print(len(vec))
-    print(vec[:5])
+    # vec = embed_document("AI/ML Intern at SynergyConnect Data Innovations")
+    # print(len(vec))
+    # print(vec[:5])
+    for chunk in chunks:
+        vec = embed_document(chunk["content"])
+        print(chunk["entry_name"], "->", len(vec))
