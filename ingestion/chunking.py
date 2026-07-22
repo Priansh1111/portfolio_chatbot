@@ -1,4 +1,4 @@
-from ingest import extraction
+from ingestion.ingest import extraction
 import re
 Section_headers = ["EXPERIENCE", "PROJECTS", "EDUCATION", "TECHNICAL SKILLS", "EXTRA CURRICULARS"]
 
