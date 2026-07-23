@@ -36,23 +36,25 @@ Ingestion and retrieval pipelines are complete and tested. LLM response generati
 - **ORM**: SQLAlchemy
 
 ## Project Structure
+```
 Resume_chatbot/
-├── .env # local secrets/config (not committed)
-├── config.py # loads env vars
+├── .env                          # local secrets/config (not committed)
+├── config.py                     # loads env vars
 ├── app/
-│ ├── db/
-│ │ ├── models.py # Document table (pgvector column)
-│ │ ├── session.py # DB session setup
-│ │ └── create_tables.py # one-time table creation script
-│ └── services/
-│ ├── embedding_service.py # Ollama embedding calls
-│ ├── retrieval_service.py # vector + keyword + hybrid search
-│ └── llm_service.py # prompt building + LLM call
+│   ├── db/
+│   │   ├── models.py              # Document table (pgvector column)
+│   │   ├── session.py             # DB session setup
+│   │   └── create_tables.py       # one-time table creation script
+│   └── services/
+│       ├── embedding_service.py   # Ollama embedding calls
+│       ├── retrieval_service.py   # vector + keyword + hybrid search
+│       └── llm_service.py         # prompt building + LLM call
 ├── ingestion/
-│ ├── ingest.py # PDF extraction
-│ ├── chunking.py # section-aware chunking
-│ └── store_embeddings.py # embed + insert into Postgres
+│   ├── ingest.py                  # PDF extraction
+│   ├── chunking.py                # section-aware chunking
+│   └── store_embeddings.py        # embed + insert into Postgres
 └── requirements.txt
+```
 
 ## Setup (local dev)
 1. Run PostgreSQL via Docker with the pgvector extension enabled
