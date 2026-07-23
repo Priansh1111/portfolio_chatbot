@@ -55,7 +55,7 @@ def hybrid_search(db, query, top_k=5):
 if __name__ == "__main__":
     from app.db.session import SessionLocal
     db = SessionLocal()
-    results = hybrid_search(db, "does he know Python?")
+    results = hybrid_search(db, "You are a hirer, is he capable for AIML Role?")
     for r in results:
         print(r["section"], "|", r["entry_name"])
     db.close()
